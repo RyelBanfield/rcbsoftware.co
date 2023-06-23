@@ -35,14 +35,14 @@ const LandingPage = () => {
 
             <div className="grid grid-cols-2 gap-4">
               <Image
-                src="/group-image-1.jpeg"
+                src="/image-1.jpeg"
                 alt="Student"
                 width={1920}
                 height={1080}
                 className="h-full w-full rounded-md object-cover"
               />
               <Image
-                src="/group-image-2.jpeg"
+                src="/image-6.jpg"
                 alt="Student"
                 width={1920}
                 height={1080}
