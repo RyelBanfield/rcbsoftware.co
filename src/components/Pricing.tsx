@@ -11,34 +11,24 @@ const Pricing = () => {
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray sm:text-4xl">
-            Simple and Transparent Pricing
+          <h2 className="text-base font-semibold leading-7 text-red">
+            How We Charge
           </h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray sm:text-4xl">
+            Simple and Transparent
+          </p>
 
           <p className="mt-6 text-lg leading-8">
-            Harness the power of the internet with our expert web development
-            services. From eye-catching websites to feature-rich web
-            applications, our team leverages the latest technologies to build
-            dynamic and user-friendly digital experiences that captivate your
-            audience.
+            We believe in providing simple and transparent pricing options. We
+            understand that budget considerations are essential for businesses,
+            which is why we offer straightforward pricing plans tailored to your
+            specific needs. With no hidden fees or surprises, you can trust that
+            our pricing is transparent and designed to deliver value.
           </p>
         </div>
 
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="lg:flex-auto">
-            <h3 className="text-2xl font-bold tracking-tight text-red">
-              Packages
-            </h3>
-
-            <p className="mt-6 text-base leading-7">
-              At RCB Software, we believe in providing simple and transparent
-              pricing options. We understand that budget considerations are
-              essential for businesses, which is why we offer straightforward
-              pricing plans tailored to your specific needs. With no hidden fees
-              or surprises, you can trust that our pricing is transparent and
-              designed to deliver value.
-            </p>
-
             <div className="mt-10 flex items-center gap-x-4">
               <h4 className="flex-none text-sm font-semibold leading-6 text-red">
                 What&apos;s included

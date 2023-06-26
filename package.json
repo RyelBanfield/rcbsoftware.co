@@ -7,7 +7,9 @@
     "clean": "rm -r .next",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "reinstall": "rm -r .next && rm -r node_modules && npm i",
+    "start": "next start",
+    "upgrade": "npm i -g npm-check-updates && ncu -u && npm i"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.15",

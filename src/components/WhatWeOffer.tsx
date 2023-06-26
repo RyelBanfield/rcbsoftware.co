@@ -38,11 +38,19 @@ const WhatWeOffer = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-red">
-            Experience Excellence
+            What We Offer
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray sm:text-4xl">
-            Elevate Your Web Presence with RCB Software
+            Modern Web Development Services
           </p>
+          <p className="mt-6 text-lg leading-8">
+            Harness the power of the internet with our expert web development
+            services. From eye-catching websites to feature-rich web
+            applications, our team leverages the latest technologies to build
+            dynamic and user-friendly digital experiences that captivate your
+            audience.
+          </p>
+
           <p className="mt-6 text-lg leading-8">
             At RCB Software, we understand that selecting the right partner for
             your web development needs is a crucial decision. With numerous
