@@ -1,5 +1,13 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "cSpell.words": ["daisyui", "heroicons", "rcbsoftware", "tailwindcss"]
+  "cSpell.words": [
+    "Banfield",
+    "daisyui",
+    "headlessui",
+    "heroicons",
+    "rcbsoftware",
+    "Ryel",
+    "tailwindcss"
+  ]
 }

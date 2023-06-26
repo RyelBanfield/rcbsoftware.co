@@ -3,18 +3,24 @@ import { type Config } from "tailwindcss";
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
 
-  theme: {},
+  theme: {
+    colors: {
+      dark: "#09090B",
+      light: "#F7F3F5",
+      red: "#B80000",
+      gray: "#999999",
+    },
+  },
 
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/forms")],
 
   daisyui: {
     themes: [
       {
         rcbsoftware: {
-          "base-100": "#09090B",
-          "base-content": "#F7F3F5",
-          primary: "#F7F3F5",
-          secondary: "#B80000",
+          ".btn": {
+            border: "none",
+          },
         },
       },
     ],

@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,8 +14,11 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className="">
-      <body className={`${inter.className} mx-auto max-w-6xl antialiased`}>
+      <body
+        className={`${inter.className} mx-auto max-w-6xl bg-dark text-light antialiased`}
+      >
         {children}
+        <Analytics />
       </body>
     </html>
   );

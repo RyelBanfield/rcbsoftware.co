@@ -4,19 +4,16 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <nav className="navbar py-4">
+    <nav className="navbar bg-dark py-4 text-light">
       <div className="navbar-start">
         <div className="dropdown">
-          <label
-            tabIndex={0}
-            className="btn-ghost btn hover:bg-base-100 sm:hidden"
-          >
+          <label tabIndex={0} className="btn sm:hidden">
             <Bars3BottomLeftIcon className="h-5 w-5" />
           </label>
 
           <ul
             tabIndex={0}
-            className="dropdown-content menu menu-sm z-[1] mt-3 w-52 rounded-md bg-base-100 p-2 shadow"
+            className="dropdown-content menu menu-sm z-[1] mt-6 w-52 rounded-md bg-dark p-2"
           >
             <li>
               <a>Services</a>
@@ -28,7 +25,7 @@ const Nav = () => {
         </div>
 
         <Link href="/">
-          <div className="relative h-12 w-12">
+          <div className="relative h-12 w-20">
             <Image
               src="/logo.svg"
               alt="RCB Software Logo"
@@ -52,7 +49,7 @@ const Nav = () => {
       </div>
 
       <div className="navbar-end">
-        <a className="btn-ghost btn hover:bg-base-100">Contact Us</a>
+        <a className="btn">Contact Us</a>
       </div>
     </nav>
   );
@@ -63,18 +60,27 @@ const Header = () => {
     <header>
       <Nav />
 
-      <div className="hero mx-auto bg-primary px-4 py-16 text-base-100">
+      <div className="hero mx-auto bg-light px-4 py-16 text-dark">
         <div className="hero-content">
           <div className="max-w-md">
             <h1 className="text-6xl font-bold">
-              Impactful software solutions.
+              Unlock Your Digital Potential.
             </h1>
+
             <p className="py-9">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Crafting Innovative and Impactful Software Solutions for the
+              Modern World.
             </p>
-            <button className="btn-secondary btn">Contact Us</button>
+
+            <p className="pb-9">
+              Welcome to RCB Software, where we combine cutting-edge technology
+              and creative expertise to build exceptional web solutions tailored
+              to your business needs. Whether you&apos;re an established
+              enterprise or a budding startup, our team of skilled developers is
+              here to transform your digital vision into reality.
+            </p>
+
+            <button className="btn bg-red text-light">Contact Us</button>
           </div>
         </div>
       </div>
