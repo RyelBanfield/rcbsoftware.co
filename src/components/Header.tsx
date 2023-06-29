@@ -68,8 +68,8 @@ const Header = () => {
             </h1>
 
             <h2 className="pt-6 text-4xl font-bold text-red">
-              We&apos; under construction still. If you&apos; seeing this,
-              you&apos; here a bit to early. 🚧
+              We&apos;re under construction still. If you&apos;re seeing this,
+              you&apos;re here a bit to early. 🚧
             </h2>
 
             <p className="py-9 font-medium">
