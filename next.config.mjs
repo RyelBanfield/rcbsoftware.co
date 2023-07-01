@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ["images.unsplash.com", "tailwindui.com"],
   },
+  experimental: {
+    legacyBrowsers: false,
+  },
 };
 
 export default nextConfig;
