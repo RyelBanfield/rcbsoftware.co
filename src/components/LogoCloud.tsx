@@ -2,12 +2,13 @@ import Image from "next/image";
 
 const LogoCloud = () => {
   return (
-    <div className="bg-light py-24 text-dark sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-light py-12 text-dark">
+      <div className="px-6">
         <h2 className="text-center text-lg font-semibold leading-8 text-base-100">
           Building with the world&apos;s most modern tools
         </h2>
-        <div className="mx-auto mt-10 grid max-w-lg grid-cols-5 items-center gap-12 px-6">
+
+        <div className="mt-9 grid grid-cols-5 items-center gap-12 px-6">
           <Image
             src="typescript.svg"
             alt="Typescript"

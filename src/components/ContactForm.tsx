@@ -1,14 +1,16 @@
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
+import { Button } from "./ui/button";
+
 const ContactForm = () => {
   return (
-    <div className="isolate bg-light px-6 py-24 text-dark sm:py-32 lg:px-8">
+    <div className="isolate bg-light px-6 py-12 text-dark sm:py-32 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Contact Us
         </h2>
-        <p className="text-gray-600 mt-2 text-lg leading-8">
-          Aute magna irure deserunt veniam aliqua magna enim voluptate.
+        <p className="text-gray-600 mt-2 font-medium leading-8">
+          Reach out and we&apos;ll get back to you as soon as possible.
         </p>
       </div>
       <form
@@ -139,12 +141,9 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="mt-10">
-          <button
-            type="submit"
-            className="block w-full rounded-md bg-red px-3.5 py-2.5 text-center text-sm font-semibold text-light"
-          >
+          <Button type="submit" className="w-full">
             Let&apos;s talk
-          </button>
+          </Button>
         </div>
       </form>
     </div>

@@ -1,93 +1,92 @@
-import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-const Nav = () => {
-  return (
-    <nav className="navbar bg-dark py-4 text-light">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn sm:hidden">
-            <Bars3BottomLeftIcon className="h-5 w-5" />
-          </label>
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu menu-sm z-[1] mt-6 w-52 rounded-md bg-dark p-2"
-          >
-            <li>
-              <a>Services</a>
-            </li>
-            <li>
-              <a>Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        <Link href="/">
-          <div className="relative h-12 w-20">
-            <Image
-              src="/logo.svg"
-              alt="RCB Software Logo"
-              fill
-              className="cursor-pointer"
-              priority
-            />
-          </div>
-        </Link>
-      </div>
-
-      <div className="navbar-center hidden sm:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Services</a>
-          </li>
-          <li>
-            <a>Contact</a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="navbar-end">
-        <a className="btn">Contact Us</a>
-      </div>
-    </nav>
-  );
-};
+import { Button } from "./ui/button";
 
 const Header = () => {
   return (
     <header>
-      <Nav />
+      <nav className="navbar bg-dark p-3 text-light">
+        <div className="navbar-start">
+          <Link href="/">
+            <div className="relative h-12 w-24 cursor-pointer transition duration-150 hover:scale-105 active:scale-90">
+              <Image
+                src="/logo.svg"
+                alt="RCB Software Logo"
+                fill
+                className="cursor-pointer"
+                priority
+              />
+            </div>
+          </Link>
+        </div>
 
-      <div className="hero mx-auto bg-light px-4 py-16 text-dark">
-        <div className="hero-content">
+        <div className="navbar-end">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+
+                <NavigationMenuContent>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      About
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+
+                <NavigationMenuContent>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Web Development
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      </nav>
+
+      <div className="hero bg-light py-12 text-dark">
+        <div className="hero-content px-6">
           <div>
             <h1 className="text-6xl font-bold">
               Unlock Your Digital Potential.
             </h1>
 
-            <h2 className="pt-6 text-4xl font-bold text-red">
-              We&apos;re under construction still. If you&apos;re seeing this,
-              you&apos;re here a bit to early. 🚧
-            </h2>
-
             <p className="py-9 font-medium">
-              Crafting Innovative and Impactful Software Solutions for the
-              Modern World.
+              Crafting <span className="font-bold text-red">Innovative</span>{" "}
+              and{" "}
+              <span className="font-bold text-red">
+                Impactful Software Solutions
+              </span>{" "}
+              for the Modern World by combining cutting-edge technology and
+              creative expertise to build exceptional web solutions tailored to
+              your business needs.
             </p>
 
-            <p className="pb-9 font-medium">
-              Welcome to RCB Software, where we combine cutting-edge technology
-              and creative expertise to build exceptional web solutions tailored
-              to your business needs. Whether you&apos;re an established
-              enterprise or a budding startup, our team of skilled developers is
-              here to transform your digital vision into reality.
-            </p>
-
-            <button className="w-36 rounded-md bg-red px-3.5 py-2.5 text-sm font-semibold text-light transition duration-300 hover:bg-dark-red active:scale-95">
-              Contact Us
-            </button>
+            <Button size={"lg"}>Contact Us</Button>
           </div>
         </div>
       </div>

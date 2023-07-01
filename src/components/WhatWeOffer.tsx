@@ -1,8 +1,8 @@
 import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
+  AcademicCapIcon,
+  CodeBracketIcon,
+  FaceSmileIcon,
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 
 const features = [
@@ -10,39 +10,41 @@ const features = [
     name: "Expertise",
     description:
       "Our team of skilled developers is well-versed in the latest web technologies and industry best practices. With a wealth of experience, we deliver software solutions that are not only visually stunning but also perform flawlessly.",
-    icon: CloudArrowUpIcon,
+    icon: AcademicCapIcon,
   },
   {
     name: "Collaboration",
     description:
       "We believe in fostering strong partnerships with our clients. We value your input throughout the development process, ensuring that your vision is brought to life and your goals are achieved.",
-    icon: LockClosedIcon,
+    icon: UserGroupIcon,
   },
   {
     name: "Innovation",
     description:
       "We thrive on innovation and continuously push the boundaries of what's possible in the digital landscape. We stay up-to-date with emerging trends and technologies, so you can trust us to provide you with forward-thinking solutions that give you a competitive edge.",
-    icon: ArrowPathIcon,
+    icon: CodeBracketIcon,
   },
   {
     name: "Customer Satisfaction",
     description:
       "Our commitment to your satisfaction is unwavering. We prioritize open communication and transparency throughout the development process, ensuring that your project is delivered on time and within budget. Your success is our ultimate goal, and we go above and beyond to ensure that you are thrilled with the results.",
-    icon: FingerPrintIcon,
+    icon: FaceSmileIcon,
   },
 ];
 
 const WhatWeOffer = () => {
   return (
-    <div className="bg-dark py-24 text-light sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center">
+    <section className="bg-dark py-12 text-light">
+      <div className="px-6">
+        <div>
           <h2 className="text-base font-semibold leading-7 text-red">
             What We Offer
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray sm:text-4xl">
+
+          <p className="mt-3 text-3xl font-bold tracking-tight text-gray sm:text-4xl">
             Modern Web Development Services
           </p>
+
           <p className="mt-6 text-lg leading-8">
             Harness the power of the internet with our expert web development
             services. From eye-catching websites to feature-rich web
@@ -52,33 +54,35 @@ const WhatWeOffer = () => {
           </p>
 
           <p className="mt-6 text-lg leading-8">
-            At RCB Software, we understand that selecting the right partner for
-            your web development needs is a crucial decision. With numerous
-            options available in the market, it&apos;s important to choose a
-            company that not only delivers exceptional results but also
-            understands your unique business requirements. Here&apos;s why RCB
-            Software stands out from the crowd:
+            We understand that selecting the right partner for your web
+            development needs is a crucial decision. With numerous options
+            available in the market, it&apos;s important to choose a company
+            that not only delivers exceptional results but also understands your
+            unique business requirements. Here&apos;s why RCB Software stands
+            out from the crowd:
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+
+        <div className="mt-16">
+          <div className="grid grid-cols-1 gap-y-10">
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16">
-                <dt className="text-base font-semibold leading-7 text-gray">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-                    <feature.icon className="h-6 w-6" aria-hidden="true" />
+                <div className="text-base font-semibold leading-7 text-gray">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-red">
+                    <feature.icon className="h-6 w-6" />
                   </div>
                   {feature.name}
-                </dt>
-                <dd className="mt-2 text-base leading-7">
+                </div>
+
+                <div className="mt-2 text-base leading-7">
                   {feature.description}
-                </dd>
+                </div>
               </div>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

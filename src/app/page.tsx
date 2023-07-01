@@ -4,8 +4,6 @@ import {
   Footer,
   Header,
   LogoCloud,
-  Pricing,
-  TeamSection,
   WhatWeOffer,
 } from "@/components";
 
@@ -16,8 +14,6 @@ const LandingPage = () => {
       <WhatWeOffer />
       <LogoCloud />
       <CTA />
-      <TeamSection />
-      <Pricing />
       <ContactForm />
       <Footer />
     </>
