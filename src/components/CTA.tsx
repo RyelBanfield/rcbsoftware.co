@@ -27,7 +27,7 @@ const CTA = () => {
         </svg>
 
         <div className="mx-auto max-w-md lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-          <h2 className="text-base font-semibold leading-7 text-red">
+          <h2 className="text-lg font-semibold leading-7 text-red">
             How We Work
           </h2>
 
