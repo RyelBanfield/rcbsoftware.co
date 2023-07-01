@@ -20,7 +20,7 @@ export default {
         light: "#F7F3F5",
         red: "#B80000",
         "light-red": "#E00000",
-        gray: "#999999",
+        gray: "#9C9C9C",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
