@@ -3,6 +3,9 @@ import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 
+import { Footer } from "@/components";
+import Nav from "@/components/Nav";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,9 +16,11 @@ export const metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" className="">
+    <html lang="en">
       <body className={`${inter.className} antialiased`}>
+        <Nav />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

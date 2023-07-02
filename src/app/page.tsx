@@ -1,11 +1,4 @@
-import {
-  ContactForm,
-  CTA,
-  Footer,
-  Header,
-  LogoCloud,
-  WhatWeOffer,
-} from "@/components";
+import { ContactForm, CTA, Header, LogoCloud, WhatWeOffer } from "@/components";
 
 const LandingPage = () => {
   return (
@@ -15,7 +8,6 @@ const LandingPage = () => {
       <LogoCloud />
       <CTA />
       <ContactForm />
-      <Footer />
     </>
   );
 };
