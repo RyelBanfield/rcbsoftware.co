@@ -13,7 +13,7 @@ const Footer = () => {
               <Image
                 src="/logo.svg"
                 className="mr-3 h-8"
-                alt="Flowbite Logo"
+                alt="RCB Software Logo"
                 fill
               />
             </div>
@@ -22,25 +22,13 @@ const Footer = () => {
           <ul className="mb-6 flex flex-wrap items-center text-sm font-medium">
             <li>
               <a href="#" className="mr-4 hover:underline md:mr-6 ">
-                About
+                About Us
               </a>
             </li>
 
             <li>
               <a href="#" className="mr-4 hover:underline md:mr-6">
-                Privacy Policy
-              </a>
-            </li>
-
-            <li>
-              <a href="#" className="mr-4 hover:underline md:mr-6 ">
-                Licensing
-              </a>
-            </li>
-
-            <li>
-              <a href="#" className="hover:underline">
-                Contact
+                Our Web Development Services
               </a>
             </li>
           </ul>

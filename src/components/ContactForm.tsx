@@ -1,10 +1,64 @@
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+"use client";
+
+import emailjs from "@emailjs/browser";
+import { ReloadIcon } from "@radix-ui/react-icons";
+import { useRef, useState } from "react";
+import { type SubmitHandler, useForm } from "react-hook-form";
 
 import { Button } from "./ui/button";
+import { Toaster } from "./ui/toaster";
+import { useToast } from "./ui/use-toast";
+
+type Inputs = {
+  fullName: string;
+  email: string;
+  message: string;
+};
 
 const ContactForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const form = useRef() as unknown as React.MutableRefObject<HTMLFormElement>;
+  const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const onSubmit: SubmitHandler<Inputs> = async () => {
+    try {
+      setSubmitting(true);
+
+      const response = await emailjs.sendForm(
+        "service_f5z1u26",
+        "template_ltuam0p",
+        form.current,
+        "QgI1M-XW2KlVIEcH5"
+      );
+
+      console.log(response);
+
+      if (response.status === 200) {
+        toast({
+          title: "Contact Form Submitted",
+          description: "We'll be in touch as soon as possible.",
+        });
+      }
+
+      setSubmitting(false);
+      setSubmitted(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <div className="isolate bg-light px-6 py-12 text-dark sm:py-32 lg:px-8">
+    <div
+      id="contact_form"
+      className="isolate block bg-light px-6 py-12 text-dark sm:py-32 lg:px-8"
+    >
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Contact Us
@@ -13,63 +67,41 @@ const ContactForm = () => {
           Reach out and we&apos;ll get back to you as soon as possible.
         </p>
       </div>
+
       <form
-        action="#"
-        method="POST"
+        ref={form}
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
+        onSubmit={handleSubmit(onSubmit)}
         className="mx-auto mt-16 max-w-xl sm:mt-20"
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label
-              htmlFor="first-name"
+              htmlFor="fullName"
               className="block text-sm font-semibold leading-6"
             >
-              First name
+              Full Name
             </label>
             <div className="mt-2.5">
               <input
                 type="text"
-                name="first-name"
-                id="first-name"
-                autoComplete="given-name"
+                id="fullName"
+                {...register("fullName", {
+                  required: true,
+                  pattern: /^[A-Za-z]+(?:\s[A-Za-z]+)+$/,
+                })}
                 className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
               />
             </div>
+            {errors.fullName && (
+              <p className="mt-2 text-sm font-semibold text-red">
+                {errors.fullName.type === "required" && "Name is required"}
+                {errors.fullName.type === "pattern" &&
+                  "Name should be your full name with only letters"}
+              </p>
+            )}
           </div>
-          <div>
-            <label
-              htmlFor="last-name"
-              className="block text-sm font-semibold leading-6"
-            >
-              Last name
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="last-name"
-                id="last-name"
-                autoComplete="family-name"
-                className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-          <div className="sm:col-span-2">
-            <label
-              htmlFor="company"
-              className="block text-sm font-semibold leading-6"
-            >
-              Company
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                name="company"
-                id="company"
-                autoComplete="organization"
-                className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
+
           <div className="sm:col-span-2">
             <label
               htmlFor="email"
@@ -80,48 +112,22 @@ const ContactForm = () => {
             <div className="mt-2.5">
               <input
                 type="email"
-                name="email"
                 id="email"
-                autoComplete="email"
+                {...register("email", {
+                  required: true,
+                  pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                })}
                 className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
               />
             </div>
+            {errors.email && (
+              <p className="mt-2 text-sm font-semibold text-red">
+                {errors.email.type === "required" && "Email is required"}
+                {errors.email.type === "pattern" && "Email is not valid"}
+              </p>
+            )}
           </div>
-          <div className="sm:col-span-2">
-            <label
-              htmlFor="phone-number"
-              className="block text-sm font-semibold leading-6"
-            >
-              Phone number
-            </label>
-            <div className="relative mt-2.5">
-              <div className="absolute inset-y-0 left-0 flex items-center">
-                <label htmlFor="country" className="sr-only">
-                  Country
-                </label>
-                <select
-                  id="country"
-                  name="country"
-                  className="text-gray-400 h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm"
-                >
-                  <option>US</option>
-                  <option>CA</option>
-                  <option>EU</option>
-                </select>
-                <ChevronDownIcon
-                  className="text-gray-400 pointer-events-none absolute right-3 top-0 h-full w-5"
-                  aria-hidden="true"
-                />
-              </div>
-              <input
-                type="tel"
-                name="phone-number"
-                id="phone-number"
-                autoComplete="tel"
-                className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
+
           <div className="sm:col-span-2">
             <label
               htmlFor="message"
@@ -131,21 +137,50 @@ const ContactForm = () => {
             </label>
             <div className="mt-2.5">
               <textarea
-                name="message"
                 id="message"
                 rows={4}
+                {...register("message", {
+                  required: true,
+                  minLength: 10,
+                  maxLength: 1000,
+                })}
                 className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
-                defaultValue={""}
               />
             </div>
+            {errors.message && (
+              <p className="mt-2 text-sm font-semibold text-red">
+                {errors.message.type === "required" && "Message is required"}
+                {errors.message.type === "minLength" &&
+                  "Message must be at least 10 characters"}
+                {errors.message.type === "maxLength" &&
+                  "Message must be less than 1000 characters"}
+              </p>
+            )}
           </div>
         </div>
+
         <div className="mt-10">
-          <Button type="submit" className="w-full">
-            Let&apos;s talk
-          </Button>
+          {!submitted && !submitting && (
+            <Button type="submit" size={"lg"} className="w-full">
+              Let&apos;s talk
+            </Button>
+          )}
+
+          {submitting && (
+            <Button size={"lg"} disabled className="w-full">
+              <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+              Please wait
+            </Button>
+          )}
+
+          {submitted && (
+            <Button size={"lg"} disabled className="w-full">
+              Submitted
+            </Button>
+          )}
         </div>
       </form>
+      <Toaster />
     </div>
   );
 };

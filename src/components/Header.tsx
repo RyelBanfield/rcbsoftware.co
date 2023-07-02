@@ -21,7 +21,7 @@ const Header = () => {
       <nav className="navbar bg-dark p-3 text-light">
         <div className="navbar-start">
           <Link href="/">
-            <div className="relative h-12 w-24 cursor-pointer transition duration-150 hover:scale-105 active:scale-90">
+            <div className="relative h-12 w-24 cursor-pointer">
               <Image
                 src="/logo.svg"
                 alt="RCB Software Logo"
@@ -44,7 +44,7 @@ const Header = () => {
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
-                      About
+                      About Us
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuContent>
@@ -86,7 +86,9 @@ const Header = () => {
               your business needs.
             </p>
 
-            <Button size={"lg"}>Contact Us</Button>
+            <Button size={"lg"} asChild>
+              <a href="#contact_form">Contact Us</a>
+            </Button>
           </div>
         </div>
       </div>

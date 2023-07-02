@@ -43,7 +43,9 @@ const CTA = () => {
             solutions that drive results and exceed expectations.
           </p>
 
-          <Button size={"lg"}>Contact Us</Button>
+          <Button size={"lg"} asChild>
+            <a href="#contact_form">Contact Us</a>
+          </Button>
         </div>
 
         <div className="relative mt-16 h-80 lg:mt-8">
