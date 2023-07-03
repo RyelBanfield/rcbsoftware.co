@@ -16,10 +16,16 @@ const AboutUs = () => {
 
         <p>
           At RCB Software, we are passionate about creating innovative software
-          solutions that empower businesses to thrive in the digital age. Led by
-          Ryel Banfield, an experienced and talented developer, our team is
-          dedicated to delivering cutting-edge technology and exceptional
-          results.
+          solutions that empower businesses to thrive in the digital age. Led by{" "}
+          <a
+            href="https://ryelbanfield.me/"
+            target="_blank"
+            className="text-dark no-underline"
+          >
+            Ryel Banfield
+          </a>
+          , an experienced and talented developer, our team is dedicated to
+          delivering cutting-edge technology and exceptional results.
         </p>
 
         <section>
