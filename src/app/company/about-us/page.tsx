@@ -1,8 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <article className="prose bg-light px-6 py-12 text-dark">
         <h1 className="text-dark">About RCB Software </h1>
 
@@ -91,7 +99,7 @@ const AboutUs = () => {
           </Button>
         </section>
       </article>
-    </>
+    </motion.div>
   );
 };
 

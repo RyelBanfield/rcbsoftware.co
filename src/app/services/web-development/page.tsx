@@ -1,8 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { Button } from "@/components/ui/button";
 
 const WebDevelopment = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <article className="prose bg-light px-6 py-12 text-dark">
         <section>
           <h1 className="text-dark">Our Web Development Services</h1>
@@ -123,7 +131,7 @@ const WebDevelopment = () => {
           </Button>
         </section>
       </article>
-    </>
+    </motion.div>
   );
 };
 
