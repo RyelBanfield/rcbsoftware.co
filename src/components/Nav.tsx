@@ -15,7 +15,7 @@ import {
 
 const Nav = () => {
   return (
-    <nav className="navbar bg-dark p-3 text-light">
+    <nav className="navbar bg-dark p-3 text-light lg:px-24">
       <div className="navbar-start">
         <Link href="/">
           <div className="relative h-12 w-24 cursor-pointer">

@@ -35,17 +35,17 @@ const features = [
 const WhatWeOffer = () => {
   return (
     <section className="bg-dark py-12 text-light">
-      <div className="px-6">
+      <div className="mx-auto max-w-4xl px-6">
         <div>
-          <h2 className="text-lg font-semibold leading-7 text-gray">
+          <h2 className="text-lg font-semibold leading-7 text-gray sm:text-center">
             What We Offer
           </h2>
 
-          <p className="mt-3 text-3xl font-bold tracking-tight text-gray sm:text-4xl">
+          <p className="mt-3 text-3xl font-bold tracking-tight text-gray sm:text-center sm:text-4xl">
             Modern Web Development Services
           </p>
 
-          <p className="mt-6 text-lg leading-8">
+          <p className="mt-6 text-lg leading-8 sm:text-center">
             Harness the power of the internet with our expert web development
             services. From eye-catching websites to feature-rich web
             applications, our team leverages the latest technologies to build
@@ -53,7 +53,7 @@ const WhatWeOffer = () => {
             audience.
           </p>
 
-          <p className="mt-6 text-lg leading-8">
+          <p className="mt-6 text-lg leading-8 sm:text-center">
             We understand that selecting the right partner for your web
             development needs is a crucial decision. With numerous options
             available in the market, it&apos;s important to choose a company

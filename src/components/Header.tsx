@@ -3,8 +3,8 @@ import { Button } from "./ui/button";
 const Header = () => {
   return (
     <header>
-      <div className="hero bg-light py-12 text-dark">
-        <div className="hero-content px-6">
+      <div className="hero bg-light py-12 text-dark sm:text-center">
+        <div className="hero-content max-w-2xl px-6">
           <div>
             <h1 className="text-6xl font-bold">
               Unlock Your Digital Potential.
