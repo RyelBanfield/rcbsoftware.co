@@ -3,8 +3,8 @@ import Image from "next/image";
 const LogoCloud = () => {
   return (
     <div className="bg-light py-12 text-dark sm:py-24">
-      <div className="px-3 xs:px-6 sm:px-9 md:px-12">
-        <h2 className="mb-6 text-center text-lg font-semibold leading-relaxed">
+      <div className="mx-auto max-w-6xl px-3 xs:px-6 sm:px-9 md:px-12">
+        <h2 className="mb-6 text-center text-lg font-semibold leading-relaxed md:mb-12">
           Building with the world&apos;s most modern tools
         </h2>
 

@@ -10,7 +10,7 @@ const WebDevelopment = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="bg-light px-3 py-12 xs:px-6 sm:px-9 md:px-12"
+      className="bg-light px-3 py-12 xs:px-6 sm:px-9 md:px-12 md:py-24"
     >
       <article className="prose mx-auto text-dark">
         <section>
