@@ -3,13 +3,15 @@ import {
   CodeBracketIcon,
   FaceSmileIcon,
   UserGroupIcon,
-} from "@heroicons/react/24/outline";
+} from "@heroicons/react/24/solid";
+
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 const features = [
   {
     name: "Expertise",
     description:
-      "Our team of skilled developers is well-versed in the latest web technologies and industry best practices. With a wealth of experience, we deliver software solutions that are not only visually stunning but also perform flawlessly.",
+      "Our team of skilled developers is well-versed in the latest web technologies and industry best practices. We deliver software solutions that are not only visually stunning but also perform flawlessly.",
     icon: AcademicCapIcon,
   },
   {
@@ -21,65 +23,64 @@ const features = [
   {
     name: "Innovation",
     description:
-      "We thrive on innovation and continuously push the boundaries of what's possible in the digital landscape. We stay up-to-date with emerging trends and technologies, so you can trust us to provide you with forward-thinking solutions that give you a competitive edge.",
+      "We continuously push the boundaries of what's possible in the digital landscape. We stay up-to-date with emerging trends and technologies, so you can trust us to provide you with forward-thinking solutions.",
     icon: CodeBracketIcon,
   },
   {
     name: "Customer Satisfaction",
     description:
-      "Our commitment to your satisfaction is unwavering. We prioritize open communication and transparency throughout the development process, ensuring that your project is delivered on time and within budget. Your success is our ultimate goal, and we go above and beyond to ensure that you are thrilled with the results.",
+      "We prioritize communication throughout development, ensuring that your project is delivered on time and within budget. Your success is our goal, and we ensure that you are thrilled with the results.",
     icon: FaceSmileIcon,
   },
 ];
 
 const WhatWeOffer = () => {
   return (
-    <section className="bg-dark py-12 text-light">
-      <div className="mx-auto max-w-4xl px-6">
-        <div>
-          <h2 className="text-lg font-semibold leading-7 text-gray sm:text-center">
-            What We Offer
-          </h2>
+    <section className="bg-dark py-12 text-light sm:py-24">
+      <div className="px-3 xs:px-6 sm:px-9 md:px-12">
+        <h2 className="mb-3 text-lg font-semibold text-gray">What We Offer</h2>
 
-          <p className="mt-3 text-3xl font-bold tracking-tight text-gray sm:text-center sm:text-4xl">
-            Modern Web Development Services
-          </p>
+        <p className="mb-6 text-3xl font-bold tracking-tight text-gray">
+          Modern Web Development Services
+        </p>
 
-          <p className="mt-6 text-lg leading-8 sm:text-center">
-            Harness the power of the internet with our expert web development
-            services. From eye-catching websites to feature-rich web
-            applications, our team leverages the latest technologies to build
-            dynamic and user-friendly digital experiences that captivate your
-            audience.
-          </p>
+        <p className="mb-6 text-lg">
+          From eye-catching websites to feature-rich web applications, our team
+          leverages the latest technologies to build dynamic and user-friendly
+          digital experiences that captivate your audience.
+        </p>
 
-          <p className="mt-6 text-lg leading-8 sm:text-center">
-            We understand that selecting the right partner for your web
-            development needs is a crucial decision. With numerous options
-            available in the market, it&apos;s important to choose a company
-            that not only delivers exceptional results but also understands your
-            unique business requirements. Here&apos;s why RCB Software stands
-            out from the crowd:
-          </p>
-        </div>
+        <p className="mb-6 text-lg">
+          Selecting the right partner for your web development needs is a
+          crucial decision. With numerous options available in the market,
+          it&apos;s important to choose a company that not only delivers
+          exceptional results but also understands your unique business
+          requirements.
+        </p>
 
-        <div className="mt-16">
-          <div className="grid grid-cols-1 gap-y-10">
-            {features.map((feature) => (
-              <div key={feature.name} className="relative pl-16">
-                <div className="text-base font-semibold leading-7 text-gray">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-red">
-                    <feature.icon className="h-6 w-6" />
-                  </div>
-                  {feature.name}
+        <p className="mb-6 text-lg">
+          Here&apos;s why we stand out from the crowd.
+        </p>
+
+        <div className="grid grid-cols-1 gap-6">
+          {features.map((feature) => (
+            <Card
+              key={feature.name}
+              className="rounded-md border-none bg-dark text-light"
+            >
+              <CardHeader className="mb-3 flex-row items-center gap-2 p-0 text-gray">
+                <div className="mt-[6px] flex h-8 w-8 items-center justify-center rounded-full bg-red">
+                  <feature.icon className="h-4 w-4" />
                 </div>
 
-                <div className="mt-2 text-base leading-7">
-                  {feature.description}
-                </div>
-              </div>
-            ))}
-          </div>
+                <CardTitle className="font-bold">{feature.name}</CardTitle>
+              </CardHeader>
+
+              <CardContent className="p-0">
+                <p className="leading-relaxed">{feature.description}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

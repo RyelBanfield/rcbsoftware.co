@@ -2,32 +2,18 @@ import Image from "next/image";
 
 const LogoCloud = () => {
   return (
-    <div className="bg-light py-12 text-dark">
-      <div className="px-6">
-        <h2 className="text-center text-lg font-semibold leading-8 text-base-100">
+    <div className="bg-light py-12 text-dark sm:py-24">
+      <div className="px-3 xs:px-6 sm:px-9 md:px-12">
+        <h2 className="mb-6 text-center text-lg font-semibold leading-relaxed">
           Building with the world&apos;s most modern tools
         </h2>
 
-        <div className="mt-9 grid grid-cols-5 items-center gap-12 px-6">
-          <Image
-            src="typescript.svg"
-            alt="Typescript"
-            width={158}
-            height={48}
-          />
-
-          <Image src="react.svg" alt="React.js" width={158} height={48} />
-
-          <Image src="next.svg" alt="Next.js" width={158} height={48} />
-
-          <Image
-            src="tailwindcss.svg"
-            alt="TailwindCSS"
-            width={158}
-            height={48}
-          />
-
-          <Image src="vercel.svg" alt="Vercel" width={158} height={48} />
+        <div className="grid grid-cols-5 gap-8 px-3 min-[375px]:gap-12 xs:px-6 sm:gap-20 sm:px-9 md:gap-24 md:px-12">
+          <Image src="typescript.svg" alt="Typescript" width={50} height={50} />
+          <Image src="react.svg" alt="React.js" width={50} height={50} />
+          <Image src="next.svg" alt="Next.js" width={50} height={50} />
+          <Image src="tailwind.svg" alt="TailwindCSS" width={50} height={50} />
+          <Image src="vercel.svg" alt="Vercel" width={50} height={50} />
         </div>
       </div>
     </div>

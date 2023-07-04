@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 
-import { ContactForm, CTA, Header, LogoCloud, WhatWeOffer } from "@/components";
+import {
+  ContactForm,
+  Header,
+  HowWeWork,
+  LogoCloud,
+  WhatWeOffer,
+} from "@/components";
 
 const LandingPage = () => {
   return (
@@ -14,7 +20,7 @@ const LandingPage = () => {
       <Header />
       <WhatWeOffer />
       <LogoCloud />
-      <CTA />
+      <HowWeWork />
       <ContactForm />
     </motion.div>
   );

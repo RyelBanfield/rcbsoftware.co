@@ -15,10 +15,10 @@ import {
 
 const Nav = () => {
   return (
-    <nav className="navbar bg-dark p-3 text-light lg:px-24">
+    <nav className="navbar bg-dark p-3 text-light xs:px-6 sm:px-9 md:px-12 md:py-6">
       <div className="navbar-start">
         <Link href="/">
-          <div className="relative h-12 w-24 cursor-pointer">
+          <div className="relative h-9 w-16 cursor-pointer">
             <Image
               src="/logo.svg"
               alt="RCB Software Logo"

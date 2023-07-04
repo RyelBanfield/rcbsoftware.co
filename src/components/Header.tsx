@@ -2,15 +2,15 @@ import { Button } from "./ui/button";
 
 const Header = () => {
   return (
-    <header>
-      <div className="hero bg-light py-12 text-dark sm:text-center">
-        <div className="hero-content max-w-2xl px-6">
+    <header className="bg-light py-12 text-dark sm:py-24">
+      <section className="hero">
+        <div className="hero-content px-3 py-0 xs:px-6 sm:px-9 md:px-12">
           <div>
-            <h1 className="text-6xl font-bold">
+            <h1 className="mb-6 text-6xl font-bold">
               Unlock Your Digital Potential.
             </h1>
 
-            <p className="py-9 font-medium">
+            <p className="mb-6 font-medium">
               Crafting <span className="font-bold text-red">Innovative</span>{" "}
               and{" "}
               <span className="font-bold text-red">
@@ -26,7 +26,7 @@ const Header = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </section>
     </header>
   );
 };

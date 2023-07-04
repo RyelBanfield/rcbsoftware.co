@@ -55,15 +55,11 @@ const ContactForm = () => {
   };
 
   return (
-    <div
-      id="contact_form"
-      className="isolate block bg-light px-6 py-12 text-dark sm:py-32 lg:px-8"
-    >
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Contact Us
-        </h2>
-        <p className="text-gray-600 mt-2 font-medium leading-8">
+    <div className="bg-light px-3 py-12 text-dark xs:px-6 sm:px-9 sm:py-24 md:px-12">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold tracking-tight">Contact Us</h2>
+
+        <p className="mt-2 font-medium">
           Reach out and we&apos;ll get back to you as soon as possible.
         </p>
       </div>
@@ -72,94 +68,98 @@ const ContactForm = () => {
         ref={form}
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto mt-9 max-w-xl sm:mt-20"
+        className="mt-9"
       >
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-          <div>
-            <label
-              htmlFor="fullName"
-              className="block text-sm font-semibold leading-6"
-            >
-              Full Name
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="text"
-                id="fullName"
-                {...register("fullName", {
-                  required: true,
-                  pattern: /^[A-Za-z]+(?:\s[A-Za-z]+)+$/,
-                })}
-                className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
-              />
-            </div>
-            {errors.fullName && (
-              <p className="mt-2 text-sm font-semibold text-red">
-                {errors.fullName.type === "required" && "Name is required"}
-                {errors.fullName.type === "pattern" &&
-                  "Name should be your full name with only letters"}
-              </p>
-            )}
+        <div className="mb-6">
+          <label
+            htmlFor="fullName"
+            className="block text-sm font-semibold leading-6"
+          >
+            Full Name
+          </label>
+
+          <div className="mt-2.5">
+            <input
+              type="text"
+              id="fullName"
+              {...register("fullName", {
+                required: true,
+                pattern: /^[A-Za-z]+(?:\s[A-Za-z]+)+$/,
+              })}
+              className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
+            />
           </div>
 
-          <div className="sm:col-span-2">
-            <label
-              htmlFor="email"
-              className="block text-sm font-semibold leading-6"
-            >
-              Email
-            </label>
-            <div className="mt-2.5">
-              <input
-                type="email"
-                id="email"
-                {...register("email", {
-                  required: true,
-                  pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                })}
-                className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
-              />
-            </div>
-            {errors.email && (
-              <p className="mt-2 text-sm font-semibold text-red">
-                {errors.email.type === "required" && "Email is required"}
-                {errors.email.type === "pattern" && "Email is not valid"}
-              </p>
-            )}
-          </div>
-
-          <div className="sm:col-span-2">
-            <label
-              htmlFor="message"
-              className="block text-sm font-semibold leading-6"
-            >
-              Message
-            </label>
-            <div className="mt-2.5">
-              <textarea
-                id="message"
-                rows={4}
-                {...register("message", {
-                  required: true,
-                  minLength: 10,
-                  maxLength: 1000,
-                })}
-                className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
-              />
-            </div>
-            {errors.message && (
-              <p className="mt-2 text-sm font-semibold text-red">
-                {errors.message.type === "required" && "Message is required"}
-                {errors.message.type === "minLength" &&
-                  "Message must be at least 10 characters"}
-                {errors.message.type === "maxLength" &&
-                  "Message must be less than 1000 characters"}
-              </p>
-            )}
-          </div>
+          {errors.fullName && (
+            <p className="mt-2 text-sm font-semibold text-red">
+              {errors.fullName.type === "required" && "Name is required"}
+              {errors.fullName.type === "pattern" &&
+                "Name should be your full name with only letters"}
+            </p>
+          )}
         </div>
 
-        <div className="mt-10">
+        <div className="mb-6">
+          <label
+            htmlFor="email"
+            className="block text-sm font-semibold leading-6"
+          >
+            Email
+          </label>
+
+          <div className="mt-2.5">
+            <input
+              type="email"
+              id="email"
+              {...register("email", {
+                required: true,
+                pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+              })}
+              className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
+            />
+          </div>
+
+          {errors.email && (
+            <p className="mt-2 text-sm font-semibold text-red">
+              {errors.email.type === "required" && "Email is required"}
+              {errors.email.type === "pattern" && "Email is not valid"}
+            </p>
+          )}
+        </div>
+
+        <div className="mb-6">
+          <label
+            htmlFor="message"
+            className="block text-sm font-semibold leading-6"
+          >
+            Message
+          </label>
+
+          <div className="mt-2.5">
+            <textarea
+              id="message"
+              rows={4}
+              {...register("message", {
+                required: true,
+                minLength: 10,
+                maxLength: 1000,
+              })}
+              className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray focus:ring-2 focus:ring-inset focus:ring-red sm:text-sm sm:leading-6"
+            />
+          </div>
+
+          {errors.message && (
+            <p className="mt-2 text-sm font-semibold text-red">
+              {errors.message.type === "required" && "Message is required"}
+              {errors.message.type === "minLength" &&
+                "Message must be at least 10 characters"}
+              {errors.message.type === "maxLength" &&
+                "Message must be less than 1000 characters"}
+            </p>
+          )}
+        </div>
+
+        <div>
           {!submitted && !submitting && (
             <Button type="submit" size={"lg"} className="w-full">
               Let&apos;s talk
