@@ -38,7 +38,7 @@ const WhatWeOffer = () => {
   return (
     <section className="bg-dark py-12 text-light sm:py-24">
       <div className="mx-auto max-w-6xl px-3 xs:px-6 sm:px-9 md:px-12">
-        <div className="md:text-center">
+        <div className="mx-auto max-w-3xl md:text-center">
           <h2 className="mb-3 text-lg font-semibold text-gray">
             What We Offer
           </h2>

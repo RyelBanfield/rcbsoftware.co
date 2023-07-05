@@ -55,8 +55,11 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-light px-3 py-12 text-dark xs:px-6 sm:px-9 sm:py-24 md:px-12">
-      <div className="text-center">
+    <div
+      id="contact_form"
+      className="bg-light px-3 py-12 text-dark xs:px-6 sm:px-9 sm:py-24 md:px-12"
+    >
+      <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-3xl font-bold tracking-tight">Contact Us</h2>
 
         <p className="mt-2 font-medium">
@@ -68,7 +71,7 @@ const ContactForm = () => {
         ref={form}
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-9"
+        className="mx-auto mt-9 max-w-xl"
       >
         <div className="mb-6">
           <label
