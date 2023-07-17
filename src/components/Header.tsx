@@ -6,9 +6,11 @@ const Header = () => {
       <section className="hero">
         <div className="hero-content max-w-3xl px-3 py-0 xs:px-6 sm:px-9 md:px-12 md:text-center">
           <div>
-            <h1 className="mb-6 text-6xl font-bold">
+            <h1 className="mb-3 text-4xl font-bold">RCB Software</h1>
+
+            <h2 className="mb-6 text-3xl font-bold">
               Unlock Your Digital Potential.
-            </h1>
+            </h2>
 
             <p className="mb-6 font-medium">
               Crafting <span className="font-bold text-red">Innovative</span>{" "}
