@@ -9,7 +9,7 @@ import Nav from "@/components/Nav";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "RCB Software",
+  title: "RCB Software - Web Development Agency",
   description:
     "Crafting innovative and impactful software solutions for the modern world.",
 };
