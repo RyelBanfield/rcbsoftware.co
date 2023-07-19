@@ -53,6 +53,7 @@ const CTA = () => {
             alt="App screenshot"
             width={1824}
             height={1080}
+            unoptimized
           />
         </div>
       </div>

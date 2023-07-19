@@ -15,6 +15,7 @@ const Footer = () => {
                 className="h-8"
                 alt="RCB Software Logo"
                 fill
+                unoptimized
               />
             </div>
           </Link>

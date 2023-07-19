@@ -9,11 +9,41 @@ const LogoCloud = () => {
         </h2>
 
         <div className="grid grid-cols-5 gap-8 px-3 min-[375px]:gap-12 xs:px-6 sm:gap-20 sm:px-9 md:gap-24 md:px-12">
-          <Image src="typescript.svg" alt="Typescript" width={50} height={50} />
-          <Image src="react.svg" alt="React.js" width={50} height={50} />
-          <Image src="next.svg" alt="Next.js" width={50} height={50} />
-          <Image src="tailwind.svg" alt="TailwindCSS" width={50} height={50} />
-          <Image src="vercel.svg" alt="Vercel" width={50} height={50} />
+          <Image
+            src="typescript.svg"
+            alt="Typescript"
+            width={50}
+            height={50}
+            unoptimized
+          />
+          <Image
+            src="react.svg"
+            alt="React.js"
+            width={50}
+            height={50}
+            unoptimized
+          />
+          <Image
+            src="next.svg"
+            alt="Next.js"
+            width={50}
+            height={50}
+            unoptimized
+          />
+          <Image
+            src="tailwind.svg"
+            alt="TailwindCSS"
+            width={50}
+            height={50}
+            unoptimized
+          />
+          <Image
+            src="vercel.svg"
+            alt="Vercel"
+            width={50}
+            height={50}
+            unoptimized
+          />
         </div>
       </div>
     </div>

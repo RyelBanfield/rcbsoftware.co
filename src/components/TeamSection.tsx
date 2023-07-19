@@ -37,6 +37,7 @@ const TeamSection = () => {
                   width={64}
                   height={64}
                   className="h-16 w-16 rounded-full object-cover"
+                  unoptimized
                 />
                 <div>
                   <h3 className="text-base font-semibold leading-7 tracking-tight">

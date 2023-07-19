@@ -26,6 +26,7 @@ const Nav = () => {
                 fill
                 className="cursor-pointer"
                 priority
+                unoptimized
               />
             </div>
           </Link>
